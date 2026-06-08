@@ -1,0 +1,107 @@
+/* 기본 초기화 및 폰트 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f4f7f6; /* 차분하고 세련된 배경색 */
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* 2행 2열 그리드 구조 설정 */
+#projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* 카드 UI 디자인 */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  padding: 16px 20px;
+  background-color: #34495e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* iframe을 담는 컨테이너 설정 (비율과 중앙 정렬 유지) */
+.iframe-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9ecef;
+  overflow: hidden;
+}
+
+/* 가로형 캔버스 (600x400) */
+.iframe-wrapper.horizontal {
+  height: 250px; 
+}
+
+/* 세로형 캔버스 (400x600) */
+.iframe-wrapper.vertical {
+  height: 350px;
+}
+
+/* iframe 축소 및 배치 */
+.iframe-wrapper iframe {
+  border: none;
+}
+
+.iframe-wrapper.horizontal iframe {
+  width: 600px;
+  height: 400px;
+  transform: scale(0.6); /* 영역에 맞게 축소 */
+  transform-origin: center center;
+}
+
+.iframe-wrapper.vertical iframe {
+  width: 400px;
+  height: 600px;
+  transform: scale(0.55); /* 영역에 맞게 축소 */
+  transform-origin: center center;
+}
